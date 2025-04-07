@@ -1,53 +1,90 @@
-# Виртуальное окружение
-venv/
-env/
-ENV/
-
-# Персональные настройки IDE (VS Code, PyCharm и т.д.)
-.vscode/
-.idea/
-
-# Python-компилированные файлы
+# Python
 __pycache__/
 *.py[cod]
 *.so
 
-# Jupyter Notebook checkpoints
-.ipynb_checkpoints
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
 
-# Логи
-*.log
+# IDEs
+.vscode/
+.idea/
+.spyderproject
+.spyproject
+.ropeproject
 
-# Файлы с конфиденциальной инфой (например, токен бота)
-.env
-
-# Бэкапы и временные файлы
-*.bak
-*.swp
-*.tmp
-*.DS_Store
+# OS files
+.DS_Store
 Thumbs.db
 
-# pyenv
-.python-version
+# Logs and backups
+*.log
+*.bak
+*.tmp
+*.swp
 
-# pipenv
-Pipfile.lock
+# Token/secrets
+.env
 
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# pytest
-.pytest_cache/
-
-# coverage
-.coverage
-htmlcov/
-.tox/
-
-# others
+# Pip/PyPi
+*.egg-info/
 dist/
 build/
-*.egg-info/
+*.egg
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Coverage/testing
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.pytest_cache/
+.hypothesis/
+
+# Jupyter
+.ipynb_checkpoints
+
+# PyCharm
+# .idea/
+
+# Static analysis
+.mypy_cache/
+.pytype/
+.ruff_cache/
+.pyre/
+
+# PDM/Poetry/Pipenv
+Pipfile.lock
+poetry.lock
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PyInstaller
+*.spec
+
+# Django/Flask
+local_settings.py
+instance/
+.webassets-cache
+
+# mkdocs
+/site
+
+# Misc
+.python-version
+__pypackages__/
+cython_debug/
