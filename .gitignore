@@ -1,0 +1,53 @@
+# Виртуальное окружение
+venv/
+env/
+ENV/
+
+# Персональные настройки IDE (VS Code, PyCharm и т.д.)
+.vscode/
+.idea/
+
+# Python-компилированные файлы
+__pycache__/
+*.py[cod]
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Логи
+*.log
+
+# Файлы с конфиденциальной инфой (например, токен бота)
+.env
+
+# Бэкапы и временные файлы
+*.bak
+*.swp
+*.tmp
+*.DS_Store
+Thumbs.db
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pytest
+.pytest_cache/
+
+# coverage
+.coverage
+htmlcov/
+.tox/
+
+# others
+dist/
+build/
+*.egg-info/
