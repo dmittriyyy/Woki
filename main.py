@@ -1,6 +1,8 @@
 from aiogram import Bot, Dispatcher, types
 import asyncio
+from aiogram.types.web_app_info import WebAppInfo
 from aiogram.filters import Command  
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 import os
 from dotenv import load_dotenv
 import sqlite3  
@@ -14,8 +16,16 @@ dp = Dispatcher()
 
 @dp.message(Command("start"))  
 async def start(message:types.Message):
-    #await bot.send_message(message.chat.id, 'Hello')
-    await message.answer('Hello')
+    button = types.KeyboardButton(
+        text="Сделать заказ",
+        web_app=WebAppInfo(url='index.html')
+    )
+    markup = types.ReplyKeyboardMarkup(
+        keyboard=[[button]],
+        resize_keyboard=True  # можно убрать, если не нужно автоизменение размера
+    )
+    await message.answer('Привет мой друг', reply_markup=markup)
+
 
 async def main():
     await dp.start_polling(bot)  # чтобы работала постоянно

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заказ пиццы</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Заказ пиццы</h1>
+
+    <form id="orderForm">
+        <label for="type">Выберите пиццу:</label>
+        <select id="type" name="type">
+            <option value="Маргарита">Маргарита</option>
+            <option value="Пепперони">Пепперони</option>
+            <option value="Гавайская">Гавайская</option>
+        </select>
+
+        <label for="size">Размер:</label>
+        <select id="size" name="size">
+            <option value="Маленькая">Маленькая</option>
+            <option value="Средняя">Средняя</option>
+            <option value="Большая">Большая</option>
+        </select>
+
+        <button type="submit">Отправить заказ</button>
+    </form>
+
+    <script>
+        const tg = window.Telegram.WebApp; // Объект Telegram WebApp
+
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const type = document.getElementById('type').value;
+            const size = document.getElementById('size').value;
+
+            const order = {
+                pizza: type,
+                size: size
+            };
+
+            // Отправка данных обратно в Telegram-бота
+            tg.sendData(JSON.stringify(order));
+
+            tg.close(); // Закрыть веб-страницу
+        });
+
+        tg.expand(); // Растянуть окно
+    </script>
+</body>
+</html>
